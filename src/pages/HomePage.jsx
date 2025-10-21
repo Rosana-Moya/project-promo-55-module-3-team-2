@@ -1,15 +1,26 @@
-import React from "react";
-import { useState, useEffect } from "react"
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import Form from "../components/Form";
 
 const HomePage = () => {
+  const [autor, setAutor] = useState("");
+  const [job, setJob] = useState("");
 
-    return (
-         <>
-            <h1>Home</h1>
-        </>
-    )
-}
+  const handleAutor = (ev) => setAutor(ev.target.value);
+  const handleJob = (ev) => setJob(ev.target.value);
 
-export default HomePage
+  return (
+    <div className="homepage">
+      <Form
+        autor={autor}
+        job={job}
+        handleAutor={handleAutor}
+        handleJob={handleJob}
+      />
+    </div>
+  );
+};
+
+export default HomePage;
+
+
 
