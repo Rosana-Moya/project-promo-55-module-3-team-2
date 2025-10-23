@@ -1,5 +1,5 @@
 import "react";
-import Preview from '../components/Preview';
+import Card from '../components/Card';
 import Footer from '../components/Footer';
 import '../styles/HomePage.css';
 import Form from "../components/Form";
@@ -56,7 +56,16 @@ const HomePage = () => {
         updateJob={updateJob}
       />
            
-            <Preview />
+            <Card
+            name={name}
+            slogan={slogan}
+            repo={repo}
+            technologies={technologies}
+            demo={demo}
+            desc={desc}
+            autor={autor}
+            job={job}
+            />
             <Footer />
         
     </div>
