@@ -1,4 +1,7 @@
 import "react";
+import Preview from '../components/Preview';
+import Footer from '../components/Footer';
+import '../styles/HomePage.css';
 import Form from "../components/Form";
 import { useState } from "react"
 import { Link } from "react-router-dom";
@@ -52,17 +55,16 @@ const HomePage = () => {
         updateAutor={updateAutor}
         updateJob={updateJob}
       />
+           
+            <Preview />
+            <Footer />
+        
      
     </div>
   );
 };
 
 export default HomePage;
-
-
-   
-
-   
 
 
 
