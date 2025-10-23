@@ -1,11 +1,13 @@
 import "react";
+import Preview from '../components/Preview';
 import Footer from '../components/Footer';
+import '../styles/HomePage.css';
 
 const HomePage = () => {
 
     return (
          <>
-            <h1>Home</h1>
+            <Preview />
             <Footer />
         </>
     )

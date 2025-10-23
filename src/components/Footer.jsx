@@ -1,6 +1,5 @@
 import "react";
 import AdalabLogo from '../images/adalab.png';
-import '../styles/footer.css';
 
 const Footer = () => {
     return (
