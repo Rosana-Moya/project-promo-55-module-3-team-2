@@ -1,8 +1,9 @@
-import "react"
+import "react";
 
-const Form = ({name, updateName, slogan, updateSlogan, updateRepo, repo, updateDemo, demo, updateTechnologies, technologies, updateDesc, desc}) => {
 
-    const handleChangeName = (ev) => {
+const Form = ({ name, updateName, slogan, updateSlogan, updateRepo, repo, updateDemo, demo, updateTechnologies, technologies, updateDesc, desc, autor, job, updateAutor, updateJob }) => {
+
+  const handleChangeName = (ev) => {
         updateName (ev.target.value)}
     const handleChangeSlogan = (ev) => {
         updateSlogan (ev.target.value)}
@@ -15,9 +16,13 @@ const Form = ({name, updateName, slogan, updateSlogan, updateRepo, repo, updateD
      const handleChangeDesc = (ev) => {
         updateDesc (ev.target.value)}
 
-    return (
-         <>
-         <h1>Información</h1>
+  const handleAutor = (ev) => updateAutor(ev.target.value);
+  const handleJob = (ev) => updateJob(ev.target.value);
+
+  return (
+    <div className="form-container">
+
+       <h1>Información</h1>
          <h2>Cuéntanos sobre el proyecto</h2>
             <form className="form">
                 <label htmlFor="name">Nombre del proyecto</label>
@@ -32,9 +37,42 @@ const Form = ({name, updateName, slogan, updateSlogan, updateRepo, repo, updateD
                 <input name="technologies" id="technologies" placeholder="Tecnologías" value={technologies} onChange={handleChangeTechnologies}/>
                 <label htmlFor="desc">Descripción</label>
                 <input name="desc" id="desc" placeholder="Descripción" value={desc} onChange={handleChangeDesc}/>
-            </form>
-        </>
-    )
-}
+            
+          <h2>Cuéntanos sobre la autora</h2>
 
-export default Form
+        <label htmlFor="autor">Nombre de la autora</label>
+        <input
+          type="text"
+          id="autor"
+          name="autor"
+          value={autor}
+          onChange={handleAutor}
+          placeholder="Nombre"
+        />
+
+        <label htmlFor="job">Trabajo de la autora</label>
+        <input
+          type="text"
+          id="job"
+          name="job"
+          value={job}
+          onChange={handleJob}
+          placeholder="Trabajo"
+        />
+
+        <div className="button-group">
+          <button type="button">Subir foto del proyecto</button>
+          <button type="button">Subir foto de la autora</button>
+          <button type="button">Crear proyecto</button>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default Form;
+
+    
+ 
+
+

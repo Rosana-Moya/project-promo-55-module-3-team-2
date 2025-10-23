@@ -1,19 +1,21 @@
-import React from "react";
+import "react";
+import Form from "../components/Form";
 import { useState } from "react"
 import { Link } from "react-router-dom";
-import Form from "../components/Form";
 import Header from "../components/Header";
 
-const HomePage = () => {
 
-    const [ name, setName ] = useState("");
+const HomePage = () => {
+     const [ name, setName ] = useState("");
     const [ slogan, setSlogan ] = useState("");
     const [ repo, setRepo ] = useState("");
     const [ demo, setDemo ] = useState("");
     const [ technologies, setTechnologies ] = useState("");
     const [ desc, setDesc ] = useState("");
+  const [autor, setAutor] = useState("");
+  const [job, setJob] = useState("");
 
-    const updateName = (value) => {
+   const updateName = (value) => {
         setName (value)}
     const updateSlogan = (value) => {
         setSlogan (value)}
@@ -26,10 +28,14 @@ const HomePage = () => {
     const updateDesc = (value) => {
         setDesc (value)}
 
-    return (
-         <>
-            <Form 
-                updateName={updateName}
+  const updateAutor = (value) => setAutor(value);
+  const updateJob = (value) => setJob(value);
+
+  return (
+    <div className="homepage">
+         <Header />
+      <Form
+       updateName={updateName}
                 name={name}
                 updateSlogan={updateSlogan}
                 slogan={slogan}
@@ -41,11 +47,23 @@ const HomePage = () => {
                 demo={demo}
                 updateDesc={updateDesc}
                 desc={desc}
-            />
-        <Header />
-        </>
-    )
-}
+        autor={autor}
+        job={job}
+        updateAutor={updateAutor}
+        updateJob={updateJob}
+      />
+     
+    </div>
+  );
+};
 
-export default HomePage
+export default HomePage;
+
+
+   
+
+   
+
+
+
 
