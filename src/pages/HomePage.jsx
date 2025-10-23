@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react"
 import { Link } from "react-router-dom";
 import Form from "../components/Form";
+import Header from "../components/Header";
 
 const HomePage = () => {
 
@@ -41,6 +42,7 @@ const HomePage = () => {
                 updateDesc={updateDesc}
                 desc={desc}
             />
+        <Header />
         </>
     )
 }
