@@ -4,7 +4,7 @@ import PreviewExample from '../images/ebook-example.jpg';
 import GitHubLogo from '../images/github.svg';
 import GlobeLogo from '../images/globe-solid.svg';
 
-const Preview = () => {
+const Preview = ({name, }) => {
     return (
         <>
             <div className="preview-container">
@@ -13,7 +13,7 @@ const Preview = () => {
             <div className="preview-card">
                 <div className="personal-info">
                     <img className="avatar" src={Avatar} alt="Imagen de ejemplo de avatar" />
-                    <p>Tu puesto o profesión</p>
+                    <p>{name.value}Tu puesto o profesión</p>
                     <h2>Tu nombre</h2>
                 </div>
                 <div className="project-info">

@@ -59,7 +59,6 @@ const HomePage = () => {
             <Preview />
             <Footer />
         
-     
     </div>
   );
 };
