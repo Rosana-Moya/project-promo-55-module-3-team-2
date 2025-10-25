@@ -1,4 +1,5 @@
 import "react"
+import { Link } from 'react-router-dom';
 import "../styles/header.css"
 
 const Header = () => {
@@ -11,7 +12,7 @@ const Header = () => {
                         <img src="/laptop-code-solid.svg" alt="Vector decorativo" className="header__icon" />
                         <h2 className="header__subtitle">Proyectos Molones</h2>
                     </div>
-                    <img src="/adalab.png" alt="Logo Adalab" class="header__logo" />
+                    <img src="/adalab.png" alt="Logo Adalab" className="header__logo" />
                 </div>
                 <div className="row">   
                     <span className="span1 Text-Style-3">
@@ -25,9 +26,11 @@ const Header = () => {
                 </div>
                 <div className="row">
                     <div className="Rectangle-1230">
-                        <span className="h4-heading">
+                       <Link to="/list-page">
+                        <button className="h4-heading" type="button">
                             VER PROYECTOS
-                        </span>
+                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
