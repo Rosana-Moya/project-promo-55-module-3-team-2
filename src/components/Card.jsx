@@ -1,17 +1,19 @@
 import "react";
 import Avatar from '../images/avatar.webp';
-import PreviewExample from '../images/ebook-example.jpg';
 import GitHubLogo from '../images/github.svg';
 import GlobeLogo from '../images/globe-solid.svg';
 import Preview from "./Preview";
 
-const Card = ({name, slogan, repo, technologies, demo, desc, autor, job}) => {
+const Card = ({name, slogan, repo, technologies, demo, desc, autor, job, updatePhoto, photo}) => {
 
     return (
         <>
-        <Preview/>
+        <Preview
+        updatePhoto={updatePhoto}
+        photo={photo}        
+        />
             <div className="preview-container">
-                <img className="preview-image" src={PreviewExample} alt="Imagen de ejemplo del proyecto" />
+                {/*<img className="preview-image" src={PreviewExample} alt="Imagen de ejemplo del proyecto" />*/}
             </div>
             <div className="preview-card">
                 <div className="personal-info">
@@ -24,6 +26,7 @@ const Card = ({name, slogan, repo, technologies, demo, desc, autor, job}) => {
                     <h3>{slogan ? slogan : 'Slogan'}</h3>
                     <p>{desc ? desc : 'Descripción del proyecto'}</p>
                     <p>{repo ? repo : 'Tu Repositorio'}</p>
+                    <p>{demo ? demo : 'Tu Demo'}</p>
                     <div className="tech-info">
                         <p>{technologies ? technologies: 'Tecnologías usadas'}</p>
                         <img className="globe-logo" src={GlobeLogo} alt="icono globo" />

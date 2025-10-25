@@ -19,6 +19,7 @@ const HomePage = () => {
   const [autor, setAutor] = useState("");
   const [job, setJob] = useState("");
 
+
    const updateName = (value) => {
         setName (value)}
     const updateSlogan = (value) => {
