@@ -14,18 +14,18 @@ const HeaderList = () => {
                     <img src="/adalab.png" alt="Logo Adalab" className="header-logo" />
                 </div>
                 <div className="row">   
-                    <span className="span-1 Text-style-3">
+                    <h1 className=".header-list__title Text-style-3">
                         Proyectos Molones
-                    </span>
+                    </h1>
                 </div>
                 <div className="row-2">
-                    <span className="span-2">
+                    <p className=".header-list__subtitle">
                         Escaparate en línea para recoger ideas a través de la tecnología.
-                    </span>
+                    </p>
                 </div>
                 <div className="row-3">
                     <div className="Rectangle">
-                        <span className="heading">
+                        <span className="header-list">
                             NUEVO PROYECTO
                         </span>
                     </div>
