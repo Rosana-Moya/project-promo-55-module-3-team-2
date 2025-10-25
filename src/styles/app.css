@@ -21,7 +21,7 @@
   color: #888;
 }
 
-label {
+.hidden-label {
   display: none;
 }
 
