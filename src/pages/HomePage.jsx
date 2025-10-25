@@ -18,6 +18,8 @@ const HomePage = () => {
     const [ desc, setDesc ] = useState("");
   const [autor, setAutor] = useState("");
   const [job, setJob] = useState("");
+  const [ photo, setPhoto ] = useState("");
+
 
 
    const updateName = (value) => {
@@ -32,6 +34,8 @@ const HomePage = () => {
         setDemo (value)}
     const updateDesc = (value) => {
         setDesc (value)}
+    const updatePhoto = (value) => {
+        setPhoto (value)}
 
   const updateAutor = (value) => setAutor(value);
   const updateJob = (value) => setJob(value);
@@ -56,9 +60,10 @@ const HomePage = () => {
         job={job}
         updateAutor={updateAutor}
         updateJob={updateJob}
+        updatePhoto={updatePhoto}
       />
            
-            <Card
+            <Preview
             name={name}
             slogan={slogan}
             repo={repo}
@@ -67,6 +72,7 @@ const HomePage = () => {
             desc={desc}
             autor={autor}
             job={job}
+            photo={photo}
             />
             <Footer />
         

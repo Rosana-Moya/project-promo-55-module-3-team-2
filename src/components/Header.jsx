@@ -8,7 +8,7 @@ const Header = () => {
             <div className="grid-container">
                 <div className="rowHeader">
                     <div className="icon-text">
-                        <img src="/laptop-code-solid.svg" alt="Vector decorativo" class="header__icon" />
+                        <img src="/laptop-code-solid.svg" alt="Vector decorativo" className="header__icon" />
                         <h2 className="header__subtitle">Proyectos Molones</h2>
                     </div>
                     <img src="/adalab.png" alt="Logo Adalab" class="header__logo" />

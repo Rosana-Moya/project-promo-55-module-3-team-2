@@ -1,18 +1,14 @@
 import "react";
-import { useState } from "react";
-import PreviewExample from '../images/ebook-example.jpg';
 
+const Form = ({ updatePhoto, name, updateName, slogan, updateSlogan, updateRepo, repo, updateDemo, demo, updateTechnologies, technologies, updateDesc, desc, autor, job, updateAutor, updateJob }) => {
 
-const Form = ({ name, updateName, slogan, updateSlogan, updateRepo, repo, updateDemo, demo, updateTechnologies, technologies, updateDesc, desc, autor, job, updateAutor, updateJob }) => {
-
-  const [ photo, setPhoto ] = useState("");
 
   const handleChangePhoto = (e) => {
     const file = e.target.files[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setPhoto(reader.result); // Guardamos la imagen en base64
+        updatePhoto(reader.result); // Guardamos la imagen en base64
       };
       reader.readAsDataURL(file);
     }
@@ -78,16 +74,6 @@ const Form = ({ name, updateName, slogan, updateSlogan, updateRepo, repo, update
         <div className="button-group">
           <label htmlFor="desc">Subir foto del proyecto</label>
           <input type="file" name="photo" id="photo" placeholder="Subir foto del proyecto" onChange={handleChangePhoto} accept="image/*"/>
-          
-          {photo ? (
-  <img
-    src={photo}
-    alt="Previsualización del proyecto"
-  />
-) : (
-  <img className="preview-image" src={PreviewExample} alt="Imagen de ejemplo del proyecto" />
-)}
-          
           <button type="button">Subir foto de la autora</button>
           <button type="button">Crear proyecto</button>
         </div>
