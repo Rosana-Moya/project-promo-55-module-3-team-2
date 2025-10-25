@@ -1,8 +1,9 @@
+
 import 'react';
 import { Routes, Route } from "react-router-dom";
 import HomePage from './HomePage';
-import ListPage from './HomePage';
-import DetailPage from './HomePage';
+import ListPage from './ListPage';
+import DetailPage from './DetailPage';
 
 
 import '../styles/app.css';
@@ -19,3 +20,4 @@ const App = () => {
 };
 
 export default App;
+

@@ -1,4 +1,6 @@
+
 import "react";
+
 
 const DetailPage = () => {
 
@@ -8,4 +10,5 @@ const DetailPage = () => {
         </>
     )
 } 
+
 export default DetailPage;
