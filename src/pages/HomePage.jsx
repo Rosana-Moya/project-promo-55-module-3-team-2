@@ -9,6 +9,7 @@ import Header from "../components/Header";
 import Preview from "../components/Preview";
 
 
+
 const HomePage = () => {
      const [ name, setName ] = useState("");
     const [ slogan, setSlogan ] = useState("");
