@@ -1,28 +1,25 @@
 import "react";
-import Card from '../components/Card';
 import Footer from '../components/Footer';
 import '../styles/HomePage.css';
 import Form from "../components/Form";
-import { useState } from "react"
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import Header from "../components/Header";
 import Preview from "../components/Preview";
 
 
 const HomePage = () => {
-     const [ name, setName ] = useState("");
+    const [ name, setName ] = useState("");
     const [ slogan, setSlogan ] = useState("");
     const [ repo, setRepo ] = useState("");
     const [ demo, setDemo ] = useState("");
     const [ technologies, setTechnologies ] = useState("");
     const [ desc, setDesc ] = useState("");
-  const [autor, setAutor] = useState("");
-  const [job, setJob] = useState("");
-  const [ photo, setPhoto ] = useState("");
+    const [autor, setAutor] = useState("");
+    const [job, setJob] = useState("");
+    const [ projectPhoto, setProjectPhoto ] = useState("");
+    const [ authorPhoto, setAuthorPhoto ] = useState("");
 
-
-
-   const updateName = (value) => {
+    const updateName = (value) => {
         setName (value)}
     const updateSlogan = (value) => {
         setSlogan (value)}
@@ -34,17 +31,19 @@ const HomePage = () => {
         setDemo (value)}
     const updateDesc = (value) => {
         setDesc (value)}
-    const updatePhoto = (value) => {
-        setPhoto (value)}
+    const updateProjectPhoto = (value) => {
+        setProjectPhoto (value)}
+    const updateAuthorPhoto = (value) => {
+        setAuthorPhoto (value)}
 
-  const updateAutor = (value) => setAutor(value);
-  const updateJob = (value) => setJob(value);
+    const updateAutor = (value) => setAutor(value);
+    const updateJob = (value) => setJob(value);
 
-  return (
-    <div className="homepage">
-         <Header />
-      <Form
-       updateName={updateName}
+    return (
+        <div className="homepage">
+            <Header />
+            <Form
+                updateName={updateName}
                 name={name}
                 updateSlogan={updateSlogan}
                 slogan={slogan}
@@ -56,28 +55,28 @@ const HomePage = () => {
                 demo={demo}
                 updateDesc={updateDesc}
                 desc={desc}
-        autor={autor}
-        job={job}
-        updateAutor={updateAutor}
-        updateJob={updateJob}
-        updatePhoto={updatePhoto}
-      />
-           
+                autor={autor}
+                job={job}
+                updateAutor={updateAutor}
+                updateJob={updateJob}
+                updateProjectPhoto={updateProjectPhoto}
+                updateAuthorPhoto={updateAuthorPhoto}
+            />
             <Preview
-            name={name}
-            slogan={slogan}
-            repo={repo}
-            technologies={technologies}
-            demo={demo}
-            desc={desc}
-            autor={autor}
-            job={job}
-            photo={photo}
+                name={name}
+                slogan={slogan}
+                repo={repo}
+                technologies={technologies}
+                demo={demo}
+                desc={desc}
+                autor={autor}
+                job={job}
+                projectPhoto={projectPhoto}
+                authorPhoto={authorPhoto}
             />
             <Footer />
-        
-    </div>
-  );
+        </div>
+    );
 };
 
 export default HomePage;
