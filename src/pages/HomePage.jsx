@@ -22,25 +22,43 @@ const HomePage = () => {
     const [job, setJob] = useState(ls.get("setJob") || "");
     const [ photo, setPhoto ] = useState(ls.get("photo") || "");
 
-
-
    const updateName = (value) => {
-        setName (value)}
+        setName (value);
+    ls.set("name", value);
+}
     const updateSlogan = (value) => {
-        setSlogan (value)}
+        setSlogan (value);
+    ls.set("slogan", value);
+}
     const updateRepo = (value) => {
-        setRepo (value)}
+        setRepo (value);
+        ls.set("repo", value);
+}
     const updateTechnologies = (value) => {
-        setTechnologies (value)}
+        setTechnologies (value);
+    ls.set("technologies", value);
+}
     const updateDemo = (value) => {
-        setDemo (value)}
+        setDemo (value);
+    ls.set("demo", value);
+}
     const updateDesc = (value) => {
-        setDesc (value)}
+        setDesc (value);
+        ls.set("desc", value);
+}
     const updatePhoto = (value) => {
-        setPhoto (value)}
+        setPhoto (value);
+    ls.set("photo", value);
+}
 
-  const updateAutor = (value) => setAutor(value);
-  const updateJob = (value) => setJob(value);
+  const updateAutor = (value) => {
+    setAutor(value);
+    ls.set("autor", value);
+}
+  const updateJob = (value) => {
+    setJob(value);
+    ls.set("setJob", value);
+}
 
   return (
     <div className="homepage">

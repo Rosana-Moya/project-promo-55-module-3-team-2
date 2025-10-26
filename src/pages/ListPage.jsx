@@ -2,7 +2,9 @@ import "react";
 import Card from "../components/Card";
 
 
+
 const ListPage = () => {
+
 const projects =[
     {
         name: "Proyecto 1",

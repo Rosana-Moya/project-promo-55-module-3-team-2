@@ -75,7 +75,7 @@ const Form = ({ updatePhoto, name, updateName, slogan, updateSlogan, updateRepo,
           <label htmlFor="desc">Subir foto del proyecto</label>
           <input type="file" name="photo" id="photo" placeholder="Subir foto del proyecto" onChange={handleChangePhoto} accept="image/*"/>
           <button type="button">Subir foto de la autora</button>
-          <button type="button">Crear proyecto</button>
+          <button type="submit">Crear proyecto</button>
         </div>
       </form>
     </div>
