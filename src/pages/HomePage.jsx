@@ -7,19 +7,20 @@ import { useState } from "react"
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Preview from "../components/Preview";
+import ls from '../services/localStorage';
 
 
 
 const HomePage = () => {
-     const [ name, setName ] = useState("");
-    const [ slogan, setSlogan ] = useState("");
-    const [ repo, setRepo ] = useState("");
-    const [ demo, setDemo ] = useState("");
-    const [ technologies, setTechnologies ] = useState("");
-    const [ desc, setDesc ] = useState("");
-  const [autor, setAutor] = useState("");
-  const [job, setJob] = useState("");
-  const [ photo, setPhoto ] = useState("");
+     const [ name, setName ] = useState(ls.get("name") || "");
+    const [ slogan, setSlogan ] = useState(ls.get ("slogan") || "");
+    const [ repo, setRepo ] = useState(ls.get("repo") || "");
+    const [ demo, setDemo ] = useState(ls.get("demo") || "");
+    const [ technologies, setTechnologies ] = useState(ls.get("technologies") || []);
+    const [ desc, setDesc ] = useState(ls.get("desc") || "");
+    const [autor, setAutor] = useState(ls.get("autor") || "");
+    const [job, setJob] = useState(ls.get("setJob") || "");
+    const [ photo, setPhoto ] = useState(ls.get("photo") || "");
 
 
 
