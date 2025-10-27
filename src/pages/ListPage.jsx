@@ -1,11 +1,10 @@
 import "react";
 import Card from "../components/Card";
-
-
+import ls from '../services/localStorage';
 
 const ListPage = () => {
 
-const projects =[
+const initialProjects =[
     {
         name: "Proyecto 1",
         slogan: "Slogan del proyecto 1",
@@ -26,7 +25,12 @@ const projects =[
         autor: "Autor del proyecto 2",
         job: "Puesto del autor 2",
     },
+
 ];  
+
+const addedProjects = ls.get ("AddedProjects", [])
+
+const projects = [...initialProjects, ...addedProjects]
      return (
         <>
         <ul> {projects.map (project => {
@@ -41,6 +45,7 @@ const projects =[
         desc={project.desc}
         autor={project.autor}
         job={project.job}
+        id={project.id}
         
                
                />

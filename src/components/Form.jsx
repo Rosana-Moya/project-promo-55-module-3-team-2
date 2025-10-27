@@ -1,4 +1,5 @@
 import "react";
+import ls from '../services/localStorage';
 
 const Form = ({ updatePhoto, name, updateName, slogan, updateSlogan, updateRepo, repo, updateDemo, demo, updateTechnologies, technologies, updateDesc, desc, autor, job, updateAutor, updateJob }) => {
 
@@ -29,6 +30,23 @@ const Form = ({ updatePhoto, name, updateName, slogan, updateSlogan, updateRepo,
 
   const handleAutor = (ev) => updateAutor(ev.target.value);
   const handleJob = (ev) => updateJob(ev.target.value);
+
+  const handleAddProject = (ev) => {
+    ev.preventDefault()
+    const newProject = {
+      name, slogan, repo, demo, technologies, desc, autor, job,
+    }
+    const previousProjects = ls.get ("AddedProjects", [])  
+    ls.set ("AddedProjects", [...previousProjects, newProject])
+    updateName("")
+    updateSlogan("")
+    updateRepo("")
+    updateDemo("")
+    updateTechnologies("")
+    updateDesc("")
+    handleAutor("")
+    handleJob("")
+  }
 
   return (
     <div className="form-container">
@@ -75,7 +93,7 @@ const Form = ({ updatePhoto, name, updateName, slogan, updateSlogan, updateRepo,
           <label htmlFor="desc">Subir foto del proyecto</label>
           <input type="file" name="photo" id="photo" placeholder="Subir foto del proyecto" onChange={handleChangePhoto} accept="image/*"/>
           <button type="button">Subir foto de la autora</button>
-          <button type="submit">Crear proyecto</button>
+          <button type="submit" onClick={handleAddProject}>Crear proyecto</button>
         </div>
       </form>
     </div>

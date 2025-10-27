@@ -4,11 +4,11 @@ import GitHubLogo from '../images/github.svg';
 import GlobeLogo from '../images/globe-solid.svg';
 import Preview from "./Preview";
 
-const Card = ({name, slogan, repo, technologies, demo, desc, autor, job}) => {
+const Card = ({name, slogan, repo, technologies, demo, desc, autor, job, id}) => {
 
     return (
         <>
-            <div className="preview-container">
+            <div className="preview-container" key={id}>
                 {/*<img className="preview-image" src={PreviewExample} alt="Imagen de ejemplo del proyecto" />*/}
             </div>
             <div className="preview-card">
