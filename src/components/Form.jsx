@@ -64,17 +64,17 @@ const Form = ({ updateProjectPhoto, updateAuthorPhoto, name, updateName, slogan,
         <h2>Cuéntanos sobre el proyecto</h2>
           <form className="form">
                 <label className="hidden-label" htmlFor="name">Nombre del proyecto</label>
-                <input name="name" id="name" placeholder="Nombre del proyecto" value={name} onChange={handleChangeName}/>
+                <input name="name" id="name" required placeholder="Nombre del proyecto" value={name} onChange={handleChangeName}/>
                 <label className="hidden-label" htmlFor="slogan">Slogan del proyecto</label>
-                <input name="slogan" id="slogan" placeholder="Slogan del proyecto" value={slogan} onChange={handleChangeSlogan}/>
+                <input name="slogan" id="slogan" required placeholder="Slogan del proyecto" value={slogan} onChange={handleChangeSlogan}/>
                 <label className="hidden-label" htmlFor="repo">Repo</label>
-                <input name="repo" id="repo" placeholder="Repositorio" value={repo} onChange={handleChangeRepo}/>
+                <input name="repo" id="repo" required placeholder="Repositorio" value={repo} onChange={handleChangeRepo}/>
                 <label className="hidden-label" htmlFor="demo">Demo</label>
-                <input name="demo" id="demo" placeholder="Demo" value={demo} onChange={handleChangeDemo}/>
+                <input name="demo" id="demo" required placeholder="Demo" value={demo} onChange={handleChangeDemo}/>
                 <label className="hidden-label" htmlFor="technologies">Tecnologías</label>
-                <input name="technologies" id="technologies" placeholder="Tecnologías" value={technologies} onChange={handleChangeTechnologies}/>
+                <input name="technologies" required id="technologies" placeholder="Tecnologías" value={technologies} onChange={handleChangeTechnologies}/>
                 <label className="hidden-label" htmlFor="desc">Descripción</label>
-                <input name="desc" id="desc" placeholder="Descripción" value={desc} onChange={handleChangeDesc}/>
+                <input name="desc" id="desc" required placeholder="Descripción" value={desc} onChange={handleChangeDesc}/>
             
           <h2>Cuéntanos sobre la autora</h2>
             <label className="hidden-label" htmlFor="autor">Nombre de la autora</label>
