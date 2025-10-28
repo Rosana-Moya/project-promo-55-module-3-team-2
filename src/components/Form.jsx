@@ -1,4 +1,5 @@
 import "react";
+import ls from '../services/localStorage';
 
 const Form = ({ updateProjectPhoto, updateAuthorPhoto, name, updateName, slogan, updateSlogan, updateRepo, repo, updateDemo, demo, updateTechnologies, technologies, updateDesc, desc, autor, job, updateAutor, updateJob }) => {
 
@@ -40,6 +41,23 @@ const Form = ({ updateProjectPhoto, updateAuthorPhoto, name, updateName, slogan,
   const handleAutor = (ev) => updateAutor(ev.target.value);
   const handleJob = (ev) => updateJob(ev.target.value);
 
+  const handleAddProject = (ev) => {
+    ev.preventDefault()
+    const newProject = {
+      name, slogan, repo, demo, technologies, desc, autor, job,
+    }
+    const previousProjects = ls.get ("AddedProjects", [])  
+    ls.set ("AddedProjects", [...previousProjects, newProject])
+    updateName("")
+    updateSlogan("")
+    updateRepo("")
+    updateDemo("")
+    updateTechnologies("")
+    updateDesc("")
+    handleAutor("")
+    handleJob("")
+  }
+
   return (
     <div className="form-container">
        <h1>Información</h1>
@@ -64,6 +82,26 @@ const Form = ({ updateProjectPhoto, updateAuthorPhoto, name, updateName, slogan,
             <label className="hidden-label" htmlFor="job">Trabajo de la autora</label>
             <input type="text" id="job" name="job" value={job} onChange={handleJob} placeholder="Trabajo" />
 
+        <label htmlFor="autor">Nombre de la autora</label>
+        <input
+          type="text"
+          id="autor"
+          name="autor"
+          value={autor}
+          onChange={handleAutor}
+          placeholder="Nombre"
+        />
+
+        <label htmlFor="job">Trabajo de la autora</label>
+        <input
+          type="text"
+          id="job"
+          name="job"
+          value={job}
+          onChange={handleJob}
+          placeholder="Trabajo"
+        />
+
           <div className="button-group">
             <label htmlFor="project-photo">Subir foto del proyecto</label>
             <input type="file" name="project-photo" id="project-photo" onChange={handleChangeProjectPhoto} accept="image/*"/>
@@ -72,6 +110,7 @@ const Form = ({ updateProjectPhoto, updateAuthorPhoto, name, updateName, slogan,
             <button type="button">Crear proyecto</button>
           </div>
           </form>
+
     </div>
   );
 };

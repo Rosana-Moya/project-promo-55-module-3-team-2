@@ -3,6 +3,7 @@ import Avatar from '../images/avatar.webp';
 import GitHubLogo from '../images/github.svg';
 import GlobeLogo from '../images/globe-solid.svg';
 
+
 const Card = ({name, slogan, repo, technologies, demo, desc, autor, job, authorPhoto}) => {
 
     return (
