@@ -3,18 +3,15 @@ import PreviewExample from '../images/ebook-example.jpg';
 import Card from '../components/Card';
 
 
-const Preview = ({name, slogan, repo, technologies, demo, desc, autor, job, photo}) => {
+const Preview = ({name, slogan, repo, technologies, demo, desc, autor, job, projectPhoto, authorPhoto}) => {
   
     return (
       <>
-      {photo ? (
-  <img
-    src={photo}
-    alt="Previsualización del proyecto"
-  />
-) : (
-  <img className="preview-image" src={PreviewExample} alt="Imagen de ejemplo del proyecto" />
-)}
+        {projectPhoto ? (
+          <img src={projectPhoto} alt="Previsualización del proyecto"/>
+        ) : (
+          <img className="preview-image" src={PreviewExample} alt="Imagen de ejemplo del proyecto" />
+        )}
         <Card
         name={name}
         slogan={slogan}
@@ -24,8 +21,9 @@ const Preview = ({name, slogan, repo, technologies, demo, desc, autor, job, phot
         desc={desc}
         autor={autor}
         job={job}
+        authorPhoto={authorPhoto}
         />
-        </>
+      </>
     );
 };
 
