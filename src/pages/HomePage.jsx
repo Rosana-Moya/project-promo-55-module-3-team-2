@@ -1,10 +1,8 @@
 import "react";
-import Card from '../components/Card';
 import Footer from '../components/Footer';
 import '../styles/HomePage.css';
 import Form from "../components/Form";
-import { useState } from "react"
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import Header from "../components/Header";
 import Preview from "../components/Preview";
 import ls from '../services/localStorage';
@@ -12,20 +10,21 @@ import ls from '../services/localStorage';
 
 
 const HomePage = () => {
-     const [ name, setName ] = useState(ls.get("name") || "");
-    const [ slogan, setSlogan ] = useState(ls.get ("slogan") || "");
-    const [ repo, setRepo ] = useState(ls.get("repo") || "");
-    const [ demo, setDemo ] = useState(ls.get("demo") || "");
-    const [ technologies, setTechnologies ] = useState(ls.get("technologies") || []);
-    const [ desc, setDesc ] = useState(ls.get("desc") || "");
-    const [autor, setAutor] = useState(ls.get("autor") || "");
-    const [job, setJob] = useState(ls.get("setJob") || "");
-    const [ photo, setPhoto ] = useState(ls.get("photo") || "");
 
-   const updateName = (value) => {
-        setName (value);
-    ls.set("name", value);
-}
+    const [ name, setName ] = useState("");
+    const [ slogan, setSlogan ] = useState("");
+    const [ repo, setRepo ] = useState("");
+    const [ demo, setDemo ] = useState("");
+    const [ technologies, setTechnologies ] = useState("");
+    const [ desc, setDesc ] = useState("");
+    const [autor, setAutor] = useState("");
+    const [job, setJob] = useState("");
+    const [ projectPhoto, setProjectPhoto ] = useState("");
+    const [ authorPhoto, setAuthorPhoto ] = useState("");
+
+    const updateName = (value) => {
+        setName (value)}
+
     const updateSlogan = (value) => {
         setSlogan (value);
     ls.set("slogan", value);
@@ -43,6 +42,7 @@ const HomePage = () => {
     ls.set("demo", value);
 }
     const updateDesc = (value) => {
+
         setDesc (value);
         ls.set("desc", value);
 }
@@ -60,11 +60,17 @@ const HomePage = () => {
     ls.set("setJob", value);
 }
 
-  return (
-    <div className="homepage">
-         <Header />
-      <Form
-       updateName={updateName}
+        setDesc (value)}
+    const updateProjectPhoto = (value) => {
+        setProjectPhoto (value)}
+    const updateAuthorPhoto = (value) => {
+        setAuthorPhoto (value)}
+
+    return (
+        <div className="homepage">
+            <Header />
+            <Form
+                updateName={updateName}
                 name={name}
                 updateSlogan={updateSlogan}
                 slogan={slogan}
@@ -76,28 +82,28 @@ const HomePage = () => {
                 demo={demo}
                 updateDesc={updateDesc}
                 desc={desc}
-        autor={autor}
-        job={job}
-        updateAutor={updateAutor}
-        updateJob={updateJob}
-        updatePhoto={updatePhoto}
-      />
-           
+                autor={autor}
+                job={job}
+                updateAutor={updateAutor}
+                updateJob={updateJob}
+                updateProjectPhoto={updateProjectPhoto}
+                updateAuthorPhoto={updateAuthorPhoto}
+            />
             <Preview
-            name={name}
-            slogan={slogan}
-            repo={repo}
-            technologies={technologies}
-            demo={demo}
-            desc={desc}
-            autor={autor}
-            job={job}
-            photo={photo}
+                name={name}
+                slogan={slogan}
+                repo={repo}
+                technologies={technologies}
+                demo={demo}
+                desc={desc}
+                autor={autor}
+                job={job}
+                projectPhoto={projectPhoto}
+                authorPhoto={authorPhoto}
             />
             <Footer />
-        
-    </div>
-  );
+        </div>
+    );
 };
 
 export default HomePage;

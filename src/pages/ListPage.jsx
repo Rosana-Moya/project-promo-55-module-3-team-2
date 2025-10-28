@@ -1,6 +1,8 @@
 import "react";
 import Card from "../components/Card";
 import ls from '../services/localStorage';
+import HeaderList from "../components/HeaderList";
+
 
 const ListPage = () => {
 
@@ -33,6 +35,8 @@ const addedProjects = ls.get ("AddedProjects", [])
 const projects = [...initialProjects, ...addedProjects]
      return (
         <>
+       <HeaderList/>
+       
         <ul> {projects.map (project => {
             return (
                <Card
@@ -56,6 +60,5 @@ const projects = [...initialProjects, ...addedProjects]
     );
 
 };
-
 
 export default ListPage;
