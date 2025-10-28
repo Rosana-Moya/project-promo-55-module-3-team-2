@@ -46,10 +46,6 @@ const HomePage = () => {
         setDesc (value);
         ls.set("desc", value);
 }
-    const updatePhoto = (value) => {
-        setPhoto (value);
-    ls.set("photo", value);
-}
 
   const updateAutor = (value) => {
     setAutor(value);
@@ -60,7 +56,6 @@ const HomePage = () => {
     ls.set("setJob", value);
 }
 
-        setDesc (value)}
     const updateProjectPhoto = (value) => {
         setProjectPhoto (value)}
     const updateAuthorPhoto = (value) => {
