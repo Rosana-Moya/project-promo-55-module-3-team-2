@@ -19,7 +19,7 @@ const HeaderList = () => {
                     </h1>
                 </div>
                 <div className="row-2">
-                    <p className=".header-list__subtitle">
+                    <p className="header-list__subtitle">
                         Escaparate en línea para recoger ideas a través de la tecnología.
                     </p>
                 </div>
