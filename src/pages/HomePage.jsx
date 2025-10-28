@@ -11,7 +11,7 @@ import ls from '../services/localStorage';
 
 const HomePage = () => {
 
-    const [ name, setName ] = useState("");
+    const [ name, setName ] = useState(ls.get("name") || "");
     const [ slogan, setSlogan ] = useState("");
     const [ repo, setRepo ] = useState("");
     const [ demo, setDemo ] = useState("");
@@ -23,7 +23,9 @@ const HomePage = () => {
     const [ authorPhoto, setAuthorPhoto ] = useState("");
 
     const updateName = (value) => {
-        setName (value)}
+        setName (value);
+    ls.set("name", value);
+}
 
     const updateSlogan = (value) => {
         setSlogan (value);
