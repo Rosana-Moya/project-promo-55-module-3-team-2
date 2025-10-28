@@ -1,5 +1,6 @@
 import "react";
 
+
 const DetailPage = () => {
 
     return (
