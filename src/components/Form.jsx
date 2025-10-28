@@ -44,7 +44,7 @@ const Form = ({ updateProjectPhoto, updateAuthorPhoto, name, updateName, slogan,
   const handleAddProject = (ev) => {
     ev.preventDefault()
     const newProject = {
-      name, slogan, repo, demo, technologies, desc, autor, job, id: JSON.stringify(Math.floor(Math.Random() * 100))
+      name, slogan, repo, demo, technologies, desc, autor, job, id: JSON.stringify(Math.floor(Math.random() * 100))
   }
     const previousProjects = ls.get ("AddedProjects", [])  
     ls.set ("AddedProjects", [...previousProjects, newProject])

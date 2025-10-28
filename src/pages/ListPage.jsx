@@ -2,6 +2,7 @@ import "react";
 import Card from "../components/Card";
 import ls from '../services/localStorage';
 import HeaderList from "../components/HeaderList";
+import { Link } from "react-router-dom";
 
 
 const ListPage = () => {
@@ -35,32 +36,37 @@ const initialProjects =[
 const addedProjects = ls.get ("AddedProjects", [])
 
 const projects = [...initialProjects, ...addedProjects]
-     return (
-        <>
-       <HeaderList/>
-       
-        <ul> {projects.map (project => {
-            return (
-               <Card
-            
-        name={project.name}
-        slogan={project.slogan}
-        repo={project.repo}
-        technologies={project.technologies}
-        demo={project.demo}
-        desc={project.desc}
-        autor={project.autor}
-        job={project.job}
-        id={project.id}
-        
-               
-               />
-            )
-        })}</ul> 
-        </>
-    
-    );
 
+     return (
+     <>
+      <HeaderList />
+
+      <ul>
+        {projects
+          .filter((project) => project.id)
+          .map((project) => (
+            <li key={project.id}>
+              <Card
+                name={project.name}
+                slogan={project.slogan}
+                repo={project.repo}
+                technologies={project.technologies}
+                demo={project.demo}
+                desc={project.desc}
+                autor={project.autor}
+                job={project.job}
+                id={project.id}
+              />
+
+              <Link to={`/detail-page/${project.id}`}>
+                <button type="button">Mira el detalle del proyecto</button>
+              </Link>
+            </li>
+          ))}
+      </ul>
+    </>
+  );
 };
+
 
 export default ListPage;
