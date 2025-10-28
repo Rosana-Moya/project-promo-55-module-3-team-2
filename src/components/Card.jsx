@@ -4,10 +4,10 @@ import GitHubLogo from '../images/github.svg';
 import GlobeLogo from '../images/globe-solid.svg';
 
 
-const Card = ({name, slogan, repo, technologies, demo, desc, autor, job, authorPhoto}) => {
+const Card = ({name, slogan, repo, technologies, demo, desc, autor, job, authorPhoto, id}) => {
 
     return (
-       <div className="preview-card">
+       <div className="preview-card" key={id}>
             <div className="personal-info">
                 {authorPhoto ? (
                     <img src={authorPhoto} alt="Imagen de la autora del proyecto"/>

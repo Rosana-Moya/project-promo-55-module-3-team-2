@@ -16,6 +16,7 @@ const initialProjects =[
         desc: "Descripción del proyecto 1",
         autor: "Autor del proyecto 1",
         job: "Puesto del autor 1",
+        id:"1"
     },
     {
         name: "Proyecto 2",
@@ -26,6 +27,7 @@ const initialProjects =[
         desc: "Descripción del proyecto 2",
         autor: "Autor del proyecto 2",
         job: "Puesto del autor 2",
+        id:"2"
     },
 
 ];  
