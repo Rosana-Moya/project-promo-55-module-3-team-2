@@ -7,11 +7,13 @@ const Preview = ({name, slogan, repo, technologies, demo, desc, autor, job, proj
   
     return (
       <>
-        {projectPhoto ? (
-          <img src={projectPhoto} alt="Previsualización del proyecto"/>
-        ) : (
-          <img className="preview-image" src={PreviewExample} alt="Imagen de ejemplo del proyecto" />
-        )}
+        <div className="preview-image">
+          {projectPhoto ? (
+            <img src={projectPhoto} alt="Previsualización del proyecto"/>
+          ) : (
+            <img src={PreviewExample} alt="Imagen de ejemplo del proyecto" />
+          )}
+        </div>
         <Card
         name={name}
         slogan={slogan}

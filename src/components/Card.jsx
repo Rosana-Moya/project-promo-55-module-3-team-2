@@ -10,7 +10,7 @@ const Card = ({name, slogan, repo, technologies, demo, desc, autor, job, authorP
        <div className="preview-card" key={id}>
             <div className="personal-info">
                 {authorPhoto ? (
-                    <img src={authorPhoto} alt="Imagen de la autora del proyecto"/>
+                    <img className="avatar" src={authorPhoto} alt="Imagen de la autora del proyecto"/>
                 ) : (
                     <img className="avatar" src={Avatar} alt="Imagen de ejemplo de avatar" />
                 )}

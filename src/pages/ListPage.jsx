@@ -1,9 +1,10 @@
 import "react";
-import Card from "../components/Card";
 import ls from '../services/localStorage';
-import HeaderList from "../components/HeaderList";
 import { Link } from "react-router-dom";
-
+import HeaderList from "../components/HeaderList";
+import Card from "../components/Card";
+import Footer from "../components/Footer";
+import '../styles/list-page.css';
 
 const ListPage = () => {
 
@@ -41,7 +42,7 @@ const projects = [...initialProjects, ...addedProjects]
      <>
       <HeaderList />
 
-      <ul>
+      <ul className="projects-list">
         {projects
           .filter((project) => project.id)
           .map((project) => (
@@ -57,13 +58,15 @@ const projects = [...initialProjects, ...addedProjects]
                 job={project.job}
                 id={project.id}
               />
-
-              <Link to={`/detail-page/${project.id}`}>
-                <button type="button">Mira el detalle del proyecto</button>
-              </Link>
+              <div className="button-container">
+                <Link to={`/detail-page/${project.id}`}>
+                  <button className="detail-button">Mira el detalle del proyecto</button>
+                </Link>
+              </div>
             </li>
           ))}
       </ul>
+      <Footer />
     </>
   );
 };

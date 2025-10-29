@@ -1,49 +1,30 @@
-import React from "react";
-import "../styles/headerList.css";
+import "react";
+import { Link } from 'react-router-dom';
+import AdalabLogo from '../images/adalab.png';
+import LaptopIcon from '../images/laptop-code-solid.svg';
 
 const HeaderList = () => {
-  return (
-    <header className="header-list">
-      <div className="grid-contain">
+    return (
+        <header className="header">
+            <div className="top-header">
+                <div className="icon-text">
+                    <img className="header-icon" src={LaptopIcon} alt="icono de ordenador" />
+                    <h2 className="header-subtitle">Proyectos Molones</h2>
+                </div>
+                <div>
+                    <img className="header-logo" src={AdalabLogo} alt="Logo Adalab" />
+                </div>
+            </div>
 
-        <div className="row-Header">
-          <div className="icon">
-            <img
-              src="/laptop-code-solid.svg"
-              alt="Vector decorativo"
-              className="header-icon"
-            />
-            <h2 className="header-subtitle">Proyectos Molones</h2>
-          </div>
-
-          <img
-            src="/adalab.png"
-            alt="Logo Adalab"
-            className="header-logo"
-          />
-        </div>
-
-        <div className="row">
-          <h1 className="header-list__title Text-style-3">
-            Proyectos Molones
-          </h1>
-        </div>
-
-        <div className="row-2">
-          <p className="header-list__subtitle">
-            Escaparate en línea para recoger ideas a través de la tecnología.
-          </p>
-        </div>
-
-        <div className="row-3">
-          <button className="button-new-project">
-            NUEVO PROYECTO
-          </button>
-        </div>
-
-      </div>
-    </header>
-  );
+            <div className="header-info">   
+                <h1 className="h1">Proyectos Molones</h1>
+                <p className="header-paragraph">Escaparate en línea para recoger ideas a través de la tecnología.</p>
+                <Link to="/">
+                    <button className="header-button">NUEVO PROYECTO</button>
+                </Link>
+            </div>
+        </header>
+    );
 };
 
 export default HeaderList;

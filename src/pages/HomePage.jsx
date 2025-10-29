@@ -1,13 +1,10 @@
-import "react";
-import Footer from '../components/Footer';
-import '../styles/HomePage.css';
-import Form from "../components/Form";
 import { useState } from "react";
+import ls from '../services/localStorage';
 import Header from "../components/Header";
 import Preview from "../components/Preview";
-import ls from '../services/localStorage';
-
-
+import Form from "../components/Form";
+import Footer from '../components/Footer';
+import '../styles/home-page.css';
 
 const HomePage = () => {
 
@@ -24,48 +21,67 @@ const HomePage = () => {
 
     const updateName = (value) => {
         setName (value);
-    ls.set("name", value);
-}
+        ls.set("name", value);
+    }
 
     const updateSlogan = (value) => {
         setSlogan (value);
-    ls.set("slogan", value);
-}
+        ls.set("slogan", value);
+    }
+    
     const updateRepo = (value) => {
         setRepo (value);
         ls.set("repo", value);
-}
+    }
+
     const updateTechnologies = (value) => {
         setTechnologies (value);
-    ls.set("technologies", value);
-}
+        ls.set("technologies", value);
+    }
+    
     const updateDemo = (value) => {
         setDemo (value);
-    ls.set("demo", value);
-}
-    const updateDesc = (value) => {
+        ls.set("demo", value);
+    }
 
+    const updateDesc = (value) => {
         setDesc (value);
         ls.set("desc", value);
-}
+    }
 
-  const updateAutor = (value) => {
-    setAutor(value);
-    ls.set("autor", value);
-}
-  const updateJob = (value) => {
-    setJob(value);
-    ls.set("setJob", value);
-}
+    const updateAutor = (value) => {
+        setAutor(value);
+        ls.set("autor", value);
+    }
+
+    const updateJob = (value) => {
+        setJob(value);
+        ls.set("setJob", value);
+    }
 
     const updateProjectPhoto = (value) => {
-        setProjectPhoto (value)}
+        setProjectPhoto (value)
+    }
+
     const updateAuthorPhoto = (value) => {
-        setAuthorPhoto (value)}
+        setAuthorPhoto (value)
+    }
 
     return (
-        <div className="homepage">
+        <>
             <Header />
+            <Preview
+                name={name}
+                slogan={slogan}
+                repo={repo}
+                technologies={technologies}
+                demo={demo}
+                desc={desc}
+                autor={autor}
+                job={job}
+                projectPhoto={projectPhoto}
+                authorPhoto={authorPhoto}
+            />
             <Form
                 updateName={updateName}
                 name={name}
@@ -86,20 +102,8 @@ const HomePage = () => {
                 updateProjectPhoto={updateProjectPhoto}
                 updateAuthorPhoto={updateAuthorPhoto}
             />
-            <Preview
-                name={name}
-                slogan={slogan}
-                repo={repo}
-                technologies={technologies}
-                demo={demo}
-                desc={desc}
-                autor={autor}
-                job={job}
-                projectPhoto={projectPhoto}
-                authorPhoto={authorPhoto}
-            />
             <Footer />
-        </div>
+        </>
     );
 };
 

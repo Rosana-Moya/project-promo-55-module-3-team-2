@@ -61,7 +61,7 @@ const Form = ({ updateProjectPhoto, updateAuthorPhoto, name, updateName, slogan,
   return (
     <div className="form-container">
        <h1>Información</h1>
-        <h2>Cuéntanos sobre el proyecto</h2>
+        <h2 className="form-paragraph">Cuéntanos sobre el proyecto</h2>
           <form className="form">
                 <label className="hidden-label" htmlFor="name">Nombre del proyecto</label>
                 <input name="name" id="name" required placeholder="Nombre del proyecto" value={name} onChange={handleChangeName}/>
@@ -76,40 +76,23 @@ const Form = ({ updateProjectPhoto, updateAuthorPhoto, name, updateName, slogan,
                 <label className="hidden-label" htmlFor="desc">Descripción</label>
                 <input name="desc" id="desc" required placeholder="Descripción" value={desc} onChange={handleChangeDesc}/>
             
-          <h2>Cuéntanos sobre la autora</h2>
+          <h2 className="form-paragraph">Cuéntanos sobre la autora</h2>
             <label className="hidden-label" htmlFor="autor">Nombre de la autora</label>
             <input type="text" id="autor" name="autor" value={autor} onChange={handleAutor} placeholder="Nombre" />
             <label className="hidden-label" htmlFor="job">Trabajo de la autora</label>
             <input type="text" id="job" name="job" value={job} onChange={handleJob} placeholder="Trabajo" />
 
-        <label htmlFor="autor">Nombre de la autora</label>
-        <input
-          type="text"
-          id="autor"
-          name="autor"
-          value={autor}
-          onChange={handleAutor}
-          placeholder="Nombre"
-        />
-
-        <label htmlFor="job">Trabajo de la autora</label>
-        <input
-          type="text"
-          id="job"
-          name="job"
-          value={job}
-          onChange={handleJob}
-          placeholder="Trabajo"
-        />
-
           <div className="button-group">
             <label htmlFor="project-photo">Subir foto del proyecto</label>
-            <input type="file" name="project-photo" id="project-photo" onChange={handleChangeProjectPhoto} accept="image/*"/>
+            <input className="button-input" type="file" name="project-photo" id="project-photo" onChange={handleChangeProjectPhoto} accept="image/*"/>
             <label htmlFor="author-photo">Subir foto de la autora</label>
-            <input type="file" name="author-photo" id="author-photo" onChange={handleChangeAuthorPhoto} accept="image/*"/>
-            <button type="submit" onClick={handleAddProject} >Crear proyecto</button>
+            <input className="button-input" type="file" name="author-photo" id="author-photo" onChange={handleChangeAuthorPhoto} accept="image/*"/>
           </div>
-          </form>
+
+          <div>
+              <button className="create-button" type="submit" onClick={handleAddProject}>Crear proyecto</button>
+          </div>
+        </form>
 
     </div>
   );

@@ -1,7 +1,9 @@
 import "react";
 import { useParams } from "react-router-dom";
 import ls from "../services/localStorage";
-
+import HeaderList from "../components/HeaderList";
+import Card from "../components/Card";
+import Footer from "../components/Footer";
 
 const DetailPage = () => {
   const { id } = useParams();
@@ -41,14 +43,21 @@ const DetailPage = () => {
   }
 
   return (
-    <div className="detail-page">
-      <h1>{project.name}</h1>
-      <h2>{project.slogan}</h2>
-      <p>{project.desc}</p>
-      <p>Autor: {project.autor}</p>
-      <p>Puesto: {project.job}</p>
-      <p>Tecnologías: {project.technologies}</p>
-    </div>
+    <>
+      <HeaderList />
+      <Card 
+        name={project.name}
+        slogan={project.slogan}
+        repo={project.repo}
+        technologies={project.technologies}
+        demo={project.demo}
+        desc={project.desc}
+        autor={project.autor}
+        job={project.job}
+        id={project.id}
+      />
+    <Footer />
+    </>
   );
 };
 
