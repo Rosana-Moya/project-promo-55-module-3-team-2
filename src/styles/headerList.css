@@ -12,7 +12,6 @@
   grid-auto-rows: min-content;
 }
 
-/* Encabezado con icono, texto y logo */
 .row-Header {
   display: flex;
   align-items: center;
@@ -45,45 +44,49 @@
   height: auto;
 }
 
-/* Título principal */
 .header-list__title {
   width: 100%;
   max-width: 495px;
   margin: 6px auto 1px auto;
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
   font-size: 40px;
-  font-weight: bold;
+  font-weight: 700;
   text-align: center;
-  color: var(--white);
+  color: #ffffff;
 }
 
-/* Subtítulo */
 .header-list__subtitle {
   font-size: 19px;
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 300;
-  color: var(--white);
+  color: #ffffff;
   text-align: center;
   margin: 10px auto 20px auto;
   width: 90%;
   max-width: 916px;
 }
 
-/* Botón "Nuevo proyecto" */
-.Rectangle {
+.button-new-project {
   background-color: #8176af;
-  width: 100px;
-  margin: 0 auto 25px auto;
-  border-radius: 20px;
-  text-align: center;
-  font-family: Roboto;
-  font-size: 10px;
-  font-weight: bold;
-  line-height: 2.4;
-  color: var(--white);
+  padding: 14px 32px;
+  border-radius: 32px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  margin: 20px auto 40px auto;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
 }
 
-/* Responsive: tablet */
+.button-new-project:hover {
+  background-color: #6a5aa5;
+  transform: translateY(-2px);
+}
+
 @media screen and (min-width: 768px) {
   .header-list__title {
     font-size: 48px;
@@ -92,14 +95,8 @@
   .header-list__subtitle {
     font-size: 20px;
   }
-
-  .Rectangle {
-    width: 120px;
-    font-size: 11px;
-  }
 }
 
-/* Responsive: desktop */
 @media screen and (min-width: 1024px) {
   .row-Header {
     flex-wrap: nowrap;
@@ -115,9 +112,5 @@
 
   .header-list__subtitle {
     font-size: 22px;
-  }
-
-  .Rectangle {
-    width: 130px;
   }
 }
