@@ -16,8 +16,8 @@ const HomePage = () => {
     const [ desc, setDesc ] = useState(ls.get("desc") || "");
     const [autor, setAutor] = useState(ls.get("autor") || "");
     const [job, setJob] = useState(ls.get("setJob") || "");
-    const [ projectPhoto, setProjectPhoto ] = useState("");
-    const [ authorPhoto, setAuthorPhoto ] = useState("");
+    const [ projectPhoto, setProjectPhoto ] = useState(ls.get("projectPhoto") || "");
+    const [ authorPhoto, setAuthorPhoto ] = useState(ls.get("authorPhoto") || "");
 
     const updateName = (value) => {
         setName (value);
@@ -59,13 +59,15 @@ const HomePage = () => {
         ls.set("setJob", value);
     }
 
-    const updateProjectPhoto = (value) => {
-        setProjectPhoto (value)
-    }
+    const updateProjectPhoto = (fileBase64) => {
+        setProjectPhoto(fileBase64);
+        ls.set("projectPhoto", fileBase64);
+    };
 
-    const updateAuthorPhoto = (value) => {
-        setAuthorPhoto (value)
-    }
+    const updateAuthorPhoto = (fileBase64) => {
+        setAuthorPhoto(fileBase64);
+        ls.set("authorPhoto", fileBase64);
+    };
 
     return (
         <>

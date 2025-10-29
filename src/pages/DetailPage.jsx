@@ -54,6 +54,8 @@ const DetailPage = () => {
         desc={project.desc}
         autor={project.autor}
         job={project.job}
+        authorPhoto={project.authorPhoto}
+        projectPhoto={project.projectPhoto}
         id={project.id}
       />
     <Footer />

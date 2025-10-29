@@ -56,6 +56,7 @@ const projects = [...initialProjects, ...addedProjects]
                 desc={project.desc}
                 autor={project.autor}
                 job={project.job}
+                authorPhoto={project.authorPhoto}
                 id={project.id}
               />
               <div className="button-container">
