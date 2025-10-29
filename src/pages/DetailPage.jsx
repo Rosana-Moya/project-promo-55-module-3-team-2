@@ -2,7 +2,7 @@ import "react";
 import { useParams } from "react-router-dom";
 import ls from "../services/localStorage";
 import HeaderList from "../components/HeaderList";
-import Card from "../components/Card";
+import Preview from "../components/Preview";
 import Footer from "../components/Footer";
 
 const DetailPage = () => {
@@ -45,7 +45,7 @@ const DetailPage = () => {
   return (
     <>
       <HeaderList />
-      <Card 
+      <Preview
         name={project.name}
         slogan={project.slogan}
         repo={project.repo}
