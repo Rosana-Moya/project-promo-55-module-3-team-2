@@ -6,7 +6,7 @@ import Card from '../components/Card';
 const Preview = ({name, slogan, repo, technologies, demo, desc, autor, job, projectPhoto, authorPhoto}) => {
   
     return (
-      <>
+      <div className="preview-container">
         <div className="preview-image">
           {projectPhoto ? (
             <img src={projectPhoto} alt="Previsualización del proyecto"/>
@@ -25,7 +25,7 @@ const Preview = ({name, slogan, repo, technologies, demo, desc, autor, job, proj
         job={job}
         authorPhoto={authorPhoto}
         />
-      </>
+      </div>
     );
 };
 
